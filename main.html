@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body onload="clock()">
+    <h1 id="h1">mughee</h1>
+    
+    <script>
+        function clock(){
+        var today = new Date();
+        var hours = today.getHours();
+        var minu = today.getMinutes();
+        var second = today.getSeconds();
+        minu = checkTime(minu);
+        second = checkTime(second);
+        document.getElementById('h1').innerHTML = hours + ":" + minu + ":" + second;
+        var t = setTimeout(clock,1000);
+        } 
+        function checkTime(i){
+            if(i < 10){
+                i = "0" + i;
+            }
+            return i;
+        }
+      
+    </script>
+</body>
+</html>
